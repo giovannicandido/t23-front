@@ -1,1 +1,23 @@
-<p>carro-form works!</p>
+<h1>Formulario de carros</h1>
+
+
+<form>
+    {{carro | json}}
+    <div>
+        <input pInputText placeholder="Placa" name="placa" [(ngModel)]="carro.placa" />
+    </div>
+    
+    <div>
+        <input pInputText placeholder="Marca" name="marca" [(ngModel)]="carro.marca" />
+    </div>
+    
+    <div>
+        <input pInputText placeholder="Cor" name="cor" [(ngModel)]="carro.cor" />
+    </div>
+    
+    <div>
+        <p-inputNumber placeholder="Ano" name="ano" [(ngModel)]="carro.ano" />
+    </div>
+
+    <p-button (click)="save()" label="Salvar"></p-button>
+</form>

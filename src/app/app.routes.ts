@@ -9,5 +9,8 @@ export const routes: Routes = [
     }, {
         path: "carros/adicionar",
         component: CarroFormComponent  
+    }, {
+        path: "carros/:placa",
+        component: CarroFormComponent
     }
 ];

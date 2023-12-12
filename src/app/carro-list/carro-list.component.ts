@@ -8,6 +8,7 @@ import { ButtonModule } from 'primeng/button';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { catchError, throwError } from 'rxjs';
 import { MessageService } from 'primeng/api';
+import { Router } from '@angular/router';
 const URL = "http://localhost:8080"
 @Component({
   selector: 'app-carro-list',
@@ -29,7 +30,8 @@ export class CarroListComponent implements OnInit {
   ]
 
   constructor(private http: HttpClient,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private router: Router
     ) {}
 
   getSeverity(item: any): string {
@@ -63,6 +65,10 @@ export class CarroListComponent implements OnInit {
         summary: "Carro deletado com sucesso"
       })
     })
+  }
+
+  editar(placa: string) {
+    this.router.navigate([`carros/${placa}`])
   }
 
 }
